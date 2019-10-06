@@ -117,6 +117,9 @@ steps:
     arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
     zipAfterPublish: true
 
+- task: WhiteSource Bolt@19
+  displayName: 'Run WhiteSource Bolt'
+
 - template: templates/build.yml
   parameters: 
     buildConfiguration: 'Debug'
